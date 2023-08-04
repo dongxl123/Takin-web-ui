@@ -68,13 +68,13 @@ const SLAConfigStopTable: React.FC<Props> = props => {
                       value: '-1'
                     }
                   ].concat(
-                      props.state.selectedBussinessActiveList.map(item => {
-                        return {
-                          label: item.businessActivityName,
-                          value: String(item.businessActivityId)
-                        };
-                      })
-                    )
+                    props.state.selectedBussinessActiveList.map((item,idx) => {
+                      return {
+                        label: idx+"-"+item.businessActivityName,
+                        value: String(item.bindRef)
+                      };
+                    })
+                  )
                   : []
               }
               style={{ width: 150 }}

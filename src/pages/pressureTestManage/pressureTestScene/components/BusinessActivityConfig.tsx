@@ -181,7 +181,7 @@ const BusinessActivityConfig = (
         formItemProps: { labelCol: { span: 2 }, wrapperCol: { span: 10 } },
         node: (
           <Radio.Group onChange={e => handleChangeConfigType(e.target.value)}>
-            <Radio value={1}>业务活动</Radio>
+            {/*<Radio value={1}>业务活动</Radio>*/}
             <Radio value={2}>业务流程</Radio>
           </Radio.Group>
         )

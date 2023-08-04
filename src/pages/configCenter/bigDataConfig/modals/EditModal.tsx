@@ -112,7 +112,7 @@ const EditModal: React.FC<Props> = props => {
                 precision={0}
                 min={1}
                 value={details[BigDataBean.value]}
-                max={1000}
+                max={9999}
                 onChange={value => setState({ details: { ...details, value } })}
                 placeholder="请填写"
               />

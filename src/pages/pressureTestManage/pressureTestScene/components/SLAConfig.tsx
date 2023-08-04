@@ -50,7 +50,12 @@ const SLAConfig = (state, setState, props): FormCardMultipleDataSourceBean => {
         label: '',
         options: {
           initialValue:
-            action !== 'add' ? detailData.stopCondition : stopInitList,
+            action !== 'add'
+              ? detailData.stopCondition &&
+              detailData.stopCondition.length > 0
+                ? detailData.stopCondition
+                : stopInitList
+              : stopInitList,
           rules: [{ required: true, message: '请设置终止条件' }]
         },
         formItemProps: { labelCol: { span: 0 }, wrapperCol: { span: 24 } },

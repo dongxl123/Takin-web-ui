@@ -34,7 +34,7 @@ const getInitState = () => ({
   uploadFileNum: 0,
   detailData: {} as any,
   /** 配置类型 */
-  configType: 1,
+  configType: 2,
   /** 业务流程id */
   businessFlowId: undefined,
   /** 施压模式 */
@@ -97,7 +97,7 @@ const PressureTestSceneConfig: React.FC<Props> = props => {
 
   useEffect(() => {
     queryBussinessActive();
-    queryBussinessActivityAndScript();
+    // queryBussinessActivityAndScript();
     queryBussinessFlowAndScript();
     if (action === 'edit') {
       queryPressureTestSceneDetail(id);

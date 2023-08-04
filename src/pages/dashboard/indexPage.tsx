@@ -50,9 +50,9 @@ const DashboardPage: React.FC<Props> = props => {
 
   useEffect(() => {
     querySwitchStatus();
-    if (getTakinAuthority() === 'true') {
-      queryFlowAccountInfo();
-    }
+    // if (getTakinAuthority() === 'true') {
+    //   queryFlowAccountInfo();
+    // }
 
     queryQucikEnterance();
     queryPressureTestSceneList();

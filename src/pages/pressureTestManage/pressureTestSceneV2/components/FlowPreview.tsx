@@ -50,27 +50,27 @@ export default (props) => {
         marginTop: 8,
       }}
     >
-      <div>
-        流量预估
-        <Tooltip
-          title="流量预估是根据施压配置参数模拟的压力图与预计消耗流量，最终计费以实际施压情况为准"
-          placement="right"
-          trigger="click"
-        >
-          <Icon
-            type="question-circle"
-            style={{ marginLeft: 4, marginRight: 4 }}
-          />
-        </Tooltip>
-        <span>预计消耗：</span>
-        {estimateFlow ? (
-          <span>
-            <Statistic precision={2} suffix="vum" value={estimateFlow} />
-          </span>
-        ) : (
-          '-- vum'
-        )}
-      </div>
+      {/*<div>*/}
+      {/*  流量预估*/}
+      {/*  <Tooltip*/}
+      {/*    title="流量预估是根据施压配置参数模拟的压力图与预计消耗流量，最终计费以实际施压情况为准"*/}
+      {/*    placement="right"*/}
+      {/*    trigger="click"*/}
+      {/*  >*/}
+      {/*    <Icon*/}
+      {/*      type="question-circle"*/}
+      {/*      style={{ marginLeft: 4, marginRight: 4 }}*/}
+      {/*    />*/}
+      {/*  </Tooltip>*/}
+      {/*  <span>预计消耗：</span>*/}
+      {/*  {estimateFlow ? (*/}
+      {/*    <span>*/}
+      {/*      <Statistic precision={2} suffix="vum" value={estimateFlow} />*/}
+      {/*    </span>*/}
+      {/*  ) : (*/}
+      {/*    '-- vum'*/}
+      {/*  )}*/}
+      {/*</div>*/}
       {/* 固定压力模式 */}
       {pressConfig.mode === 1 && (
         <FixLineCharts

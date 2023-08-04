@@ -357,28 +357,28 @@ const PressureConfig = (
             className={styles.chartWrap}
             style={{ top: testMode === TestMode.并发模式 ? -60 : -40 }}
           >
-            <p className={styles.title}>
-              流量预估
-              <Tooltip
-                title="流量预估是根据施压配置参数模拟的压力图与预计消耗流量，最终计费以实际施压情况为准"
-                placement="right"
-                trigger="click"
-              >
-                <Icon type="question-circle" style={{ marginLeft: 4 }} />
-              </Tooltip>
-              <span className={styles.subTitle}>预计消耗：</span>
-              {state.estimateFlow ? (
-                <span className={styles.subTitleNum}>
-                  <Statistic
-                    precision={2}
-                    suffix="vum"
-                    value={state.estimateFlow}
-                  />
-                </span>
-              ) : (
-                '-- vum'
-              )}
-            </p>
+            {/*<p className={styles.title}>*/}
+            {/*  流量预估*/}
+            {/*  <Tooltip*/}
+            {/*    title="流量预估是根据施压配置参数模拟的压力图与预计消耗流量，最终计费以实际施压情况为准"*/}
+            {/*    placement="right"*/}
+            {/*    trigger="click"*/}
+            {/*  >*/}
+            {/*    <Icon type="question-circle" style={{ marginLeft: 4 }} />*/}
+            {/*  </Tooltip>*/}
+            {/*  <span className={styles.subTitle}>预计消耗：</span>*/}
+            {/*  {state.estimateFlow ? (*/}
+            {/*    <span className={styles.subTitleNum}>*/}
+            {/*      <Statistic*/}
+            {/*        precision={2}*/}
+            {/*        suffix="vum"*/}
+            {/*        value={state.estimateFlow}*/}
+            {/*      />*/}
+            {/*    </span>*/}
+            {/*  ) : (*/}
+            {/*    '-- vum'*/}
+            {/*  )}*/}
+            {/*</p>*/}
             {state.flag ? (
               <div>
                 {state.pressureMode === 1 && (

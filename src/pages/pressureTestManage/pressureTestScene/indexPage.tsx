@@ -74,9 +74,9 @@ const PressureTestScene: React.FC<PressureTestSceneProps> = (props) => {
 
   useEffect(() => {
     querySwitchStatus();
-    if (getTakinAuthority() === 'true') {
-      queryFlowAccountInfo();
-    }
+    // if (getTakinAuthority() === 'true') {
+    //   queryFlowAccountInfo();
+    // }
   }, []);
 
   useEffect(() => {
@@ -242,7 +242,7 @@ const PressureTestScene: React.FC<PressureTestSceneProps> = (props) => {
       <SearchTable
         ref={refHandle}
         commonTableProps={{
-          columns 
+          columns
         }}
         commonFormProps={{
           formData: getPressureTestSceneFormData(state),
@@ -449,7 +449,7 @@ const PressureTestScene: React.FC<PressureTestSceneProps> = (props) => {
                 </span>
               </Col>
             </Row>
-            {state.startStatus === 'loading' && <div 
+            {state.startStatus === 'loading' && <div
               style={{ display: 'flex', justifyContent: 'flex-end', marginTop: 70 }}
             >
               <Button type="danger" onClick={() => cancelLaunch(state.sceneId)}>停止</Button>
