@@ -10,6 +10,7 @@ import { Icon, Button } from 'antd';
 import Link from 'umi/link';
 import { connect } from 'dva';
 import { getThemeByKeyName } from 'src/utils/useTheme';
+import { getPagePaasParams } from 'src/utils/utils';
 
 interface Props {
   onCollapsed?: () => void;
@@ -32,7 +33,8 @@ const TitleNode: React.FC<Props> = (props) => {
   }
 
   const logoTitle = getThemeByKeyName('logoTitle');
-
+  const clusterCode = getPagePaasParams("paasBasicClusterCode");
+  const isDevTestEnv = clusterCode.endsWith('test')||clusterCode.endsWith('dev');
   return (
     <Link to={url}>
       <Title
@@ -68,7 +70,10 @@ const TitleNode: React.FC<Props> = (props) => {
               <img width={30} src={require('./../../assets/takin_logo.png')} />
 
               {!props.collapsedStatus && (
-                <span className={styles.logoName}>Takin</span>
+                <span className={styles.logoName}
+                      style={{ paddingLeft: 0, color: isDevTestEnv? 'white' : 'red' }} >
+                  {clusterCode}
+                </span>
               )}
             </>
           )}

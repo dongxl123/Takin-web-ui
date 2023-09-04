@@ -2,6 +2,7 @@ import { message } from 'antd';
 import { AxiosRequestConfig } from 'axios';
 import download from 'downloadjs';
 import request from './request';
+import { parse } from 'qs';
 
 export function tryToParseJson(jsonString: string): any | undefined {
   let json;
@@ -188,7 +189,7 @@ message.config({
 /**
  * 判读菜单是否存在
  * @param path 菜单对应路径
- * @returns 
+ * @returns
  */
 export const checkMenuByPath = (path: string): boolean => {
   const menus = JSON.parse(localStorage.trowebUserMenu);
@@ -205,3 +206,20 @@ export const checkMenuByPath = (path: string): boolean => {
   flatMenu(menus);
   return flatedMenus.some(x => x.path === path);
 };
+
+/**
+ * get paasParamValue by key
+ *
+ * @param {string} key
+ */
+export function getPagePaasParams(key){
+  let paasParams = window.location.href.split('?')[1];
+  if(paasParams == null) {
+    return "";
+  }
+  let paasParamMap = parse(paasParams.split("#")[0]);
+  if(paasParamMap == null) {
+    return "";
+  }
+  return paasParamMap[key];
+}

@@ -25,7 +25,7 @@ const SecondContent: React.FC<Props> = props => {
       },
       params: {
         projectName: state.appName,
-        urlPrefix: `${window.location.href.split('#')[0]}takin-web/api`,
+        urlPrefix: `${window.location.href.split('#')[0]}hxpts-api/api`,
         version: state.agentVersionInfo.version
       }
     });
