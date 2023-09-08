@@ -1,7 +1,7 @@
 import axios, { AxiosRequestConfig } from 'axios';
 import { message, Modal } from 'antd';
 import { Basic } from 'src/types';
-import { getTakinAuthority } from './utils';
+import { getTakinAuthority, mergePaasParams } from './utils';
 import BaseResponse = Basic.BaseResponse;
 declare var window: Window;
 declare var serverUrl: string;
@@ -183,6 +183,7 @@ export function httpDelete<T>(url, data?: any, options?: any) {
 }
 
 export function httpRequest<T>(req: RequestParams): Promise<BaseResponse<T>> {
+  req.url = mergePaasParams(req.url);
   return request({
     ...req,
     [req.method === Method.GET ? 'params' : 'data']: req.payload

@@ -208,6 +208,25 @@ export const checkMenuByPath = (path: string): boolean => {
 };
 
 /**
+ * merge paasParams to url
+ *
+ * @param {string} url
+ */
+export function mergePaasParams(url) {
+  let paasParams = window.location.href.split('?')[1];
+  if(paasParams == null) {
+    return url;
+  }
+  paasParams = paasParams.split("#")[0];
+  if (url.indexOf('?')>0){
+    url = `${url}&${paasParams}`;
+  } else {
+    url = `${url}?${paasParams}`;
+  }
+  return url;
+}
+
+/**
  * get paasParamValue by key
  *
  * @param {string} key
